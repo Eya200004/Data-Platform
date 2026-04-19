@@ -9,7 +9,8 @@ Elle consiste à importer les données brutes (CSV) et à les rendre accessibles
 
 ## Étapes réalisées
 
-* Upload des fichiers CSV dans un Volume (Unity Catalog)
+* Création du Volume nommé my_volume
+* Upload des fichiers CSV dans ce Volume (Unity Catalog)
 * Lecture des données avec PySpark
 * Vérification basique du schéma
 
@@ -32,7 +33,7 @@ Les données sont destinées à être stockées en format Delta Lake pour les é
 ## Pipeline
 
 ```id="p9k2qv"
-Ingestion → Cleaning → ML → Visualisation
+Ingestion → Cleaning → Visualisation → ML
 ```
 
 ---
