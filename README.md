@@ -1,46 +1,18 @@
-# Data Ingestion
+# Stockage — Delta Lake
 
-## Description
+## Tables créées
 
-Cette branche implémente la phase de **data ingestion** dans Databricks.
-Elle consiste à importer les données brutes (CSV) et à les rendre accessibles pour les étapes suivantes du pipeline.
+### `companies`
+Créée depuis le fichier CSV stocké dans un Volume Databricks.
 
----
+### `employees`
+Créée depuis le fichier CSV stocké dans un Volume Databricks.
 
-## Étapes réalisées
+> Des colonnes ont été renommées pour supprimer les caractères spéciaux incompatibles avec Delta Lake (`₺`, `%`, `(`, `)`).
 
-* Création du Volume nommé my_volume
-* Upload des fichiers CSV dans ce Volume (Unity Catalog)
-* Lecture des données avec PySpark
-* Vérification basique du schéma
+## Localisation dans Databricks
 
----
-
-## Emplacement des données
-
-```id="f1k9pz"
-/Volumes/workspace/default/my_volume/
 ```
-
----
-
-## Stockage
-
-Les données sont destinées à être stockées en format Delta Lake pour les étapes suivantes.
-
----
-
-## Pipeline
-
-```id="p9k2qv"
-Ingestion → Cleaning → Visualisation → ML
+Catalog → workspace → default → companies
+Catalog → workspace → default → employees
 ```
-
----
-
-## Collaboration
-
-* Données brutes accessibles via Volume
-* Utilisées par la branche **cleaning** pour transformation
-
----
